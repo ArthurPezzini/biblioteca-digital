@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Hermetic Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+        }
+        .w3-row-padding img {
+            margin-bottom: 12px;
+        }
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+        #main {
+            margin-left: 120px;
+        }
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0;
+            }
+        }
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .book-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            text-align: center;
+            padding: 15px;
+        }
+        .book-item img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .book-item h3 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+        }
+        .book-item p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <img src="https://www.w3schools.com/w3images/avatar_smoke.jpg" style="width:100%">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black" onclick="showSection('home')">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black" onclick="showSection('ebooks')">
+        <i class="fa fa-book w3-xxlarge"></i>
+        <p>EBOOKS</p>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black" onclick="showSection('publicar')">
+        <i class="fa fa-upload w3-xxlarge"></i>
+        <p>PUBLICAR</p>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black" onclick="showSection('login')">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>LOGIN</p>
+    </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#" class="w3-bar-item w3-button" style="width:25% !important" onclick="showSection('home')">HOME</a>
+        <a href="#" class="w3-bar-item w3-button" style="width:25% !important" onclick="showSection('ebooks')">EBOOKS</a>
+        <a href="#" class="w3-bar-item w3-button" style="width:25% !important" onclick="showSection('publicar')">PUBLICAR</a>
+        <a href="#" class="w3-bar-item w3-button" style="width:25% !important" onclick="showSection('login')">LOGIN</a>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+    <!-- Header/Home -->
+    <section id="home" class="w3-container w3-padding-32 w3-center w3-black">
+        <h1 class="w3-jumbo">Hermetic Library</h1>
+        <p>Bem-vindo à sua biblioteca digital de eBooks.</p>
+        <img src="https://www.w3schools.com/w3images/library.jpg" alt="Library" class="w3-image" width="992" height="1108">
+    </section>
+
+    <!-- eBooks Section -->
+    <section id="ebooks" class="w3-content w3-justify w3-text-grey w3-padding-64 hidden">
+        <h2 class="w3-text-light-grey">Lista de eBooks</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <div class="book-list">
+            <div class="book-item">
+                <img src="capa1.jpg" alt="Capa do livro Desvendando Horizontes">
+                <h3>Desvendando Horizontes</h3>
+                <p>Um Guia Completo para Navegar no Mundo da Tecnologia Emergente</p>
+            </div>
+            <div class="book-item">
+                <img src="capa2.jpg" alt="Capa do livro Somos UM">
+                <h3>Somos UM</h3>
+            </div>
+            <div class="book-item">
+                <img src="capa3.jpg" alt="Capa do livro Ouro Digital">
+                <h3>Ouro Digital</h3>
+                <p>Bitcoin e o Futuro das Finanças</p>
+            </div>
+            <div class="book-item">
+                <img src="capa4.jpg" alt="Capa do livro Além do Véu">
+                <h3>Além do Véu</h3>
+                <p>Os Arcanos da Gematria</p>
+            </div>
+            <div class="book-item">
+                <img src="capa5.jpg" alt="Capa do livro Coragem Inabalável">
+                <h3>Coragem Inabalável</h3>
+                <p>Um Roteiro para Vencer o Medo e Alcançar o Sucesso</p>
+            </div>
+            <div class="book-item">
+                <img src="capa6.jpg" alt="Capa do livro Desvendando Segredos do Conhecimento">
+                <h3>Desvendando Segredos do Conhecimento</h3>
+                <p>A Jornada Mágica dos Livros Esotéricos Informativos</p>
+            </div>
+            <div class="book-item">
+                <img src="capa7.jpg" alt="Capa do livro Rumo à Prosperidade Financeira">
+                <h3>Rumo à Prosperidade Financeira</h3>
+                <p>Guia Completo para Iniciantes</p>
+            </div>
+            <div class="book-item">
+                <img src="capa8.jpg" alt="Capa do livro Programando a Prosperidade">
+                <h3>Programando a Prosperidade</h3>
+                <p>Códigos Bíblicos para o Sucesso</p>
+            </div>
+            <div class="book-item">
+                <img src="capa9.jpg" alt="Capa do livro O Mapa da Riqueza">
+                <h3>O Mapa da Riqueza</h3>
+            </div>
+            <div class="book-item">
+                <img src="capa10.jpg" alt="Capa do livro Mentalidade Exponencial">
+                <h3>Mentalidade Exponencial</h3>
+                <p>POTENCIALIZE SUA MENTE</p>
+            </div>
+            <div class="book-item">
+                <img src="capa11.jpg" alt="Capa do livro RUNAS">
+                <h3>RUNAS</h3>
+                <p>Magias Antigas Nórdicas</p>
+            </div>
+            <div class="book-item">
+                <img src="capa12.jpg" alt="Capa do livro A Bíblia Hermética e Tarológica">
+                <h3>A Bíblia Hermética e Tarológica</h3>
+                <p>Hermetic Bible</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publicar Section -->
+    <section id="publicar" class="w3-content w3-justify w3-text-grey w3-padding-64 hidden">
+        <h2 class="w3-text-light-grey">Publicar eBook</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <form action="/submit-ebook" method="post" enctype="multipart/form-data">
+            <p>
+                <label class="w3-text-light-grey">Título do eBook</label>
+                <input class="w3-input w3-border" type="text" name="titulo" required>
+            </p>
+            <p>
+                <label class="w3-text-light-grey">Descrição</label>
+                <textarea class="w3-input w3-border" name="descricao" required></textarea>
+            </p>
+            <p>
+                <label class="w3-text-light-grey">Capa do eBook</label>
+                <input class="w3-input w3-border" type="file" name="capa" accept="image/*" required>
+            </p>
+            <p>
+                <label class="w3-text-light-grey">Arquivo do eBook (PDF)</label>
+                <input class="w3-input w3-border" type="file" name="ebook" accept="application/pdf" required>
+            </p>
+            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" type="submit">
+                <i class="fa fa-upload"></i> Publicar
+            </button>
+        </form>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="w3-content w3-justify w3-text-grey w3-padding-64 hidden">
+        <h2 class="w3-text-light-grey">Login do Aluno</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <form action="/login" method="post">
+            <p>
+                <label class="w3-text-light-grey">Nome de Usuário</label>
+                <input class="w3-input w3-border" type="text" name="username" required>
+            </p>
+            <p>
+                <label class="w3-text-light-grey">Senha</label>
+                <input class="w3-input w3-border" type="password" name="password" required>
+            </p>
+            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" type="submit">
+                <i class="fa fa-sign-in"></i> Entrar
+            </button>
+        </form>
+    </section>
+</div>
+</body>
+</html>
